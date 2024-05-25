@@ -1,6 +1,11 @@
-import java.util.ArrayList;
-
 public class Empleado implements Component{
+    private String nombre;
+    private String content;
+
+    public Empleado(String nombre, String content) {
+        this.nombre = nombre;
+        this.content = content;
+    }
 
     @Override
     public void Execute() {
@@ -9,12 +14,13 @@ public class Empleado implements Component{
 
     @Override
     public String getNombre() {
-        return null;
+        return nombre;
     }
 
     @Override
-    public void getContent() {
+    public String getContent() {
 
+        return content;
     }
 
     //Component

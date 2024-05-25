@@ -1,5 +1,5 @@
 public interface Component {
     public void Execute();
     public String getNombre();
-    public void getContent();
+    public String getContent();
 }

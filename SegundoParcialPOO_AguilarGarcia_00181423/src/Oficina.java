@@ -53,11 +53,12 @@ public class Oficina implements Component{
 
     @Override
     public String getNombre() {
-        return null;
+        return nombre;
     }
 
     @Override
-    public void getContent() {
+    public String getContent() {
 
+        return null;
     }
 }
