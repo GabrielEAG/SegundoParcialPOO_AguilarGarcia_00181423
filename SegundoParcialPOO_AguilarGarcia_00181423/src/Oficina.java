@@ -3,10 +3,10 @@ import java.util.Iterator;
 
 public class Oficina implements Component{
     private String nombre;
-    private ArrayList<Component> contents;
+    private final ArrayList<Component> contents;
 
-    public void Empleado(String name){
-        this.nombre = name;
+    public Oficina(String nombre){
+        this.nombre = nombre;
         contents = new ArrayList<Component>();
     }
 
@@ -16,17 +16,17 @@ public class Oficina implements Component{
         }
     }
 
-    public void deleteComponent(String name){
-        if(searchComponent(name)){
-            contents.remove(getComponent(name));
+    public void deleteComponent(String nombre){
+        if(searchComponent(nombre)){
+            contents.remove(getComponent(nombre));
         }
     }
 
-    public boolean searchComponent(String name){
+    public boolean searchComponent(String nombre){
         Iterator<Component> iter = contents.iterator();
         boolean comprobation = false;
         while(iter.hasNext()){
-            if(iter.next().getNombre().equals(name)){
+            if(iter.next().getNombre().equals(nombre)){
                 comprobation = true;
                 break;
             }
@@ -34,12 +34,12 @@ public class Oficina implements Component{
         return comprobation;
     }
 
-    private Component getComponent(String name){
+    private Component getComponent(String nombre){
         Iterator<Component> iter = contents.iterator();
         Component ans = null;
         while(iter.hasNext()){
             ans = iter.next();
-            if(ans.getNombre().equals(name)){
+            if(ans.getNombre().equals(nombre)){
                 break;
             }
         }
